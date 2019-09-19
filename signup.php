@@ -31,6 +31,8 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="src/signup-style.css">
+
+    
 </head>
 <body>
 
@@ -68,14 +70,13 @@
 		</li>
 			
 			<li class="has-children">
-			  
-			  <ul class="dropdown">
+			<ul class="dropdown">
 			  
 			  </ul>
 			</li>
-			<!-- <li><a href="login.php">Log In</a></li> -->
+			 <li><a href="login.php">Log In</a></li> -->
 			
-			
+	
 		  </ul>
 		</nav>
 	  </div>
@@ -88,39 +89,40 @@
 </div>
 </header>
 
+style="margin-left: 350px; margin-right:350px;"
 
 
+</div> 
 
-</div>
-
-<!--End of NavBar--->
+<!-- <--End of NavBar---> -->
 
 <!-- Sign up form -->
 
-    <div class="main">
+    <div class="main"style="padding:0px">
 
-        
+    <form method="POST" class="register-form" id="register-form" enctype="multipart/form-data">
         <section class="signup">
-            <div class="container">
+            <div class="container form_sign"  >
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="register-form">
+                        
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="name" id="name" placeholder="Your Name"/>
+                                <input type="text" name="name" id="name" placeholder="userName" required/>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                                <label for="email"><i class="zmdi zmdi-email" required ></i> <span class="form_required"></span></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" autocomplete= "email"/>
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <label for="pass"><i class="zmdi zmdi-lock"><span class="form_required"></span></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" required minlength= "6" aria-describedby= "passwordHint" autocomplete = "current-password"/>
+                                <small class ="form_hint text-danger" id= "passwordHint">The password must be atleast 6 charcters long</small>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" required/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
@@ -129,20 +131,75 @@
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                             </div>
-                        </form>
+                        
                     </div>
                     <div class="signup-image">
                         <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">I am already member</a>
+                        <a href="signin.php" class="signup-image-link">I am already member</a>
                     </div>
                 </div>
             </div>
         </section>
+        // <!-- Sign up  Form -->
 
-        <!-- Sing up  Form -->
+
+        <?php require 'db.php';
+
+        if (isset($_REQUEST) && !empty ($_POST))
+        {
+              $username = $_POST ['name'];
+              $email = $_POST ['email'];
+              $password = $_POST ['pass'];
+
+            
+              $username = mysqli_real_escape_string($con, $username);
+
+              $sql = "INSERT INTO users (USERNAME, EMAIL, PASSWORD) VALUES ('$username', '$email', '$password')";
+        }
+             
+        if (mysqli_query($con, $sql))
+              {
+
+                // header('location:signin.php');
+                
+                // $msg = "registration succesful. <a href = 'signin.php'>LOGIN</a> now..";
+
+                // echo "<div clss= 'echo'>";
+
+                // echo $msg;
+
+                // echo "</div>";
+              }
+
+                else 
+                {
+                  // echo "error".mysqli_error($con);
+                  echo "problem";
+                }
+
+      
+
+        mysqli_close($con);
+
+
+
+
+
+
+
+
+
+
+
+       
+
+        ?>
         
-
+        </form>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="src/signin.js"></script>
 
     <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

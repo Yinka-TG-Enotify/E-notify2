@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="" type="image/x-icon">
 
 <!---stylesheets--->
-<link rel="stylesheet" href="src/fonts/IndieFlower-Regular.ttf">
+
 <link rel="stylesheet" href="src/css/bootstrap.min.css">
 <link rel="stylesheet" href="src/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="src/form-style.css">
@@ -34,11 +34,11 @@
                       <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
-                          <input id="email" name="email" placeholder="email address" class="form-control"  type="email">
+                          <input id="email" name="email" placeholder="email address" class="form-control"  type="email" required>
                         </div>
                       </div>
                       <div class="form-group">
-                        <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Reset Password" type="submit">
+                        <input name="recover-submit" id="btn-forget" class="btn btn-lg btn-primary btn-block" value="Reset Password" type="submit">
                       </div>
                       
                       <input type="hidden" class="hide" name="token" id="token" value=""> 
@@ -55,6 +55,7 @@
 
 
 
+    <script src="src/signin.js"></script>
 
 
 
