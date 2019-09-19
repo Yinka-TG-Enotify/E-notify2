@@ -68,7 +68,7 @@ require 'db.php';
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block font-weight-bold">
                 <li class="active"><a href=""></a></li>
-                <li class=""><a href="index3.php">
+                <li class=""><a href="index.php">
                     <button class="btn btn-sm btn-danger btn btn-outline-danger secondary rounded-pill border-radius-30" type="submit">Home</button></a>
                   </a>
                 </li>

@@ -64,7 +64,7 @@
 
 		  <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block font-weight-bold">
 			<li class="active"><a href=""></a></li>
-			<li class=""><a href="index3.php">
+			<li class=""><a href="index.php">
 			<button class="btn btn-sm btn-danger btn btn-outline-danger secondary rounded-pill border-radius-30" type="submit">Home</button></a>
 			</a>
 		</li>
@@ -74,7 +74,7 @@
 			  
 			  </ul>
 			</li>
-			 <li><a href="login.php">Log In</a></li> -->
+			 <li><a href="signin.php">Log In</a></li>
 			
 	
 		  </ul>
@@ -89,12 +89,12 @@
 </div>
 </header>
 
-style="margin-left: 350px; margin-right:350px;"
+
 
 
 </div> 
 
-<!-- <--End of NavBar---> -->
+<!-- <--End of NavBar---> 
 
 <!-- Sign up form -->
 
